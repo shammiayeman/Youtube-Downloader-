@@ -1,0 +1,68 @@
+{
+  "name": "youtube-downloader",
+  "productName": "YouTube Downloader",
+  "version": "1.0.0",
+  "description": "A minimal desktop YouTube downloader built with Electron",
+  "type": "module",
+  "main": "main.js",
+  "author": "shammiayeman313@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win nsis",
+    "dist:linux": "electron-builder --linux AppImage deb",
+    "dist:mac": "electron-builder --mac dmg"
+  },
+  "build": {
+    "appId": "edu.lab.youtubedownloader",
+    "productName": "YouTube Downloader",
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "style.css",
+      "assets/**/*",
+      "!node_modules/**/*.map"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "synopsis": "Minimal YouTube downloader"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.3.3"
+  },
+  "dependencies": {
+    "@distube/ytdl-core": "^5.2.1",
+    "ytdl-core": "npm:@distube/ytdl-core@^5.2.1"
+  }
+}
