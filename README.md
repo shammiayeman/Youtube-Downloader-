@@ -11,7 +11,7 @@ A minimal, lightweight cross-platform desktop application built with **Electron*
 ---
 
 ## 🖼️ App Preview
-> `![App Screenshot](SS.png)`
+> ![App Screenshot](SS.png)
 
 ---
 

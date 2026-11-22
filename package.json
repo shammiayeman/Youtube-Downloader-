@@ -4,17 +4,17 @@
   "version": "1.0.0",
   "description": "A minimal desktop YouTube downloader built with Electron",
   "type": "module",
-  "main": "main.js",
+  "main": "main.js",//ap suru hole kon file age colbe bole deya hoyeche
   "author": "shammiayeman313@gmail.com",
   "license": "MIT",
-  "scripts": {
-    "start": "electron .",
+  "scripts": { //dist desktop install ba desktop package bananor command
+    "start": "electron .",//electron and electron builder appa clano and build korar tool
     "dist": "electron-builder",
     "dist:win": "electron-builder --win nsis",
     "dist:linux": "electron-builder --linux AppImage deb",
     "dist:mac": "electron-builder --mac dmg"
   },
-  "build": {
+  "build": {//app kiavbe package hbe dist output ,kon file thakbe windows ba mac er target ki hbe decide kore
     "appId": "edu.lab.youtubedownloader",
     "productName": "YouTube Downloader",
     "directories": {
