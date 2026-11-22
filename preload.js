@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron');//contex bridege diye main and renderer k connection estab hy
 
 contextBridge.exposeInMainWorld('api', {
   downloadVideo: (url) => ipcRenderer.invoke('download-video', url)
